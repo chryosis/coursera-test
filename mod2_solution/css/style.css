@@ -1,0 +1,207 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#headerText {
+	text-align: center;
+	font-weight: bolder;
+	font-size: 175%;
+}
+
+#bigBlockChicken {
+	background-color: #cccccc;
+	width: 32%;
+	float: left;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+
+#bigBlockBeef {
+	background-color: #cccccc;
+	width: 32%;
+	float: left;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+#bigBlockSushi {
+	background-color: #cccccc;
+	width: 32%;
+	float: left;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	margin-bottom: 5px;
+}
+
+#littleBlockChicken {
+	background-color: #ff4d94;
+	width: 116px;
+	text-align: center;
+	float: right;
+	height: 25%;
+	font-weight: bolder;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: black;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	font-size: 125%;
+}
+
+#littleBlockBeef {
+	background-color: #960000;
+	color: white;
+	width: 116px;
+	text-align: center;
+	float: right;
+	height: 25%;
+	font-weight: bolder;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: black;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	font-size: 125%;
+}
+
+#littleBlockSushi {
+	background-color: #b29700;
+	width: 116px;
+	text-align: center;
+	float: right;
+	height: 25%;
+	font-weight: bolder;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: black;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	font-size: 125%;
+}
+
+#chickenText {
+	clear: both;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 100%;
+}
+
+#beefText {
+	clear: both;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 100%;
+}
+
+#sushiText {
+	clear: both;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+	#bigBlockChicken {
+	background-color: #cccccc;
+	width: 49.2%;
+	float: left;
+	margin-bottom: 5px;
+	margin-right: 0px;
+	}
+
+	#bigBlockBeef {
+	background-color: #cccccc;
+	width: 49.2%;
+	float: right;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	}
+
+	#bigBlockSushi {
+	background-color: #cccccc;
+	float: left;
+	width: 98.895%;
+	clear: left;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	}	
+}
+
+@media (max-width: 767px){
+	#bigBlockChicken {
+	background-color: #cccccc;
+	width: 75%;
+	float: none;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 5px;
+	}
+
+	#bigBlockBeef {
+		background-color: #cccccc;
+		width: 75%;
+		float: none;
+		clear: left;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 5px;
+	}
+
+	#bigBlockSushi {
+		background-color: #cccccc;
+		width: 75%;
+		float: none;
+		clear: left;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 5px;
+	}
+
+	#littleBlockChicken {
+		background-color: #ff4d94;
+		width: 116px;
+		text-align: center;
+		float: right;
+		clear: left;
+		height: 25%;
+		font-weight: bolder;
+	}
+
+	#littleBlockBeef {
+		background-color: #960000;
+		width: 116px;
+		text-align: center;
+		float: right;
+		clear: left;
+		height: 25%;
+		font-weight: bolder;
+	}
+
+	#littleBlockSushi {
+		background-color: #b29700;
+		width: 116px;
+		text-align: center;
+		float: right;
+		clear: left;
+		height: 25%;
+		font-weight: bolder;
+	}
+}
