@@ -1,0 +1,23 @@
+#navChicken {
+	margin-top: 15px;
+	background-color: #f44256;
+	width: 100%;
+	text-align: center;
+}
+
+#navBeef {
+	background-color: #f4b841;
+	width:  100%;
+	text-align: center;
+}
+
+#navSushi {
+	background-color: #e5f441;
+	width:  100%;
+	text-align: center;
+}
+
+.bg-div {
+	background-color: #37363f;
+	color: white;
+}
