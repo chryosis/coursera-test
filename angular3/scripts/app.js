@@ -1,65 +1,63 @@
 (function() {
-	'use strict';
-	
-	//Declare module, controller, service, and directive
-	angular
-		.module('NarrowItDownApp', []) //ng-app="NarrowItDownApp"
-		.controller('NarrowItDownController', NarrowItDownController) //ng-controller="NarrowItDownController as ctrl"
-		.service('MenuSearchService', MenuSearchService) //return JSON items
-		.directive('foundItems', FoundItemsDirective); //Declare DDO, scope, and FoundItemsDirectiveController, html: <found-items>
+  'use strict';
+  angular
+    .module('NarrowItDownApp', [])
+    .controller('NarrowItDownController', NarrowItDownController)
+    .service('MenuSearchService', MenuSearchService)
+    .directive('foundItems', FoundItemsDirective);
 
-	function FoundItemsDirective() {
-		var ddo = {
-			templateURL: 'foundItems.html',
-			scope: {
-				found: '<', //HTML: found="ctrl.items" one way binding to the items array.
-				onRemove: '&' //HTML: ng-click="list.onRemove({index: $index});" Selects index of what we want to remove.
-			},
-			controller: FoundItemsDirectiveController, //Set the controller for this directive to FoundItemsDirectiveController
-			controllerAs: 'list', //Refer to controller with list.*
-			bindToController: true //Bind to the controller
-		};
-		return ddo;
-	}
+  function FoundItemsDirective() {
+    var ddo = {
+      templateUrl: 'foundItems.html',
+      scope: {
+        found: '<',
+        onRemove: '&'
+      },
+      controller: FoundItemsDirectiveController,
+      controllerAs: 'list',
+      bindToController: true
+    };
+    return ddo;
+  }
 
-	function FoundItemsDirectiveController() { //Used in FoundItemsDirective... controller: FoundItemsDirectiveController
-		var list = this;
+  function FoundItemsDirectiveController() {
+    var list = this;
 
-		list.isEmpty = function () {
-			return list.found != undefined && list.found.length === 0;
-		}
-	}
+    list.isEmpty = function() {
+      return list.found != undefined && list.found.length === 0;
+    }
+  }
 
-	NarrowItDownController.$inject = ['MenuSearchService'];
-	function NarrowItDownController(MenuSearchService) {
-		var controller = this;
+  NarrowItDownController.$inject = ['MenuSearchService'];
+  function NarrowItDownController(MenuSearchService) {
+    var controller = this;
 
-		controller.searchTerm = "";
+    controller.searchTerm = "";
 
-		controller.narrowIt = function () {
-			if (controller.searchTerm === "") {
-				controller.items = [];
-				return;
-			}
-			var promise = MenuSearchService.getMatchedMenuItems(controller.searchTerm);
-			promise.then(function(response) {
-				controller.items = response;
-			})
-			.catch(function(error) {
-				console.log("Something went wrong", error);
-			});
-		};
+    controller.narrowIt = function() {
+      if (controller.searchTerm === "") {
+        controller.items = [];
+        return;
+      }
+      var promise = MenuSearchService.getMatchedMenuItems(controller.searchTerm);
+      promise.then(function(response) {
+        controller.items = response;
+      })
+      .catch(function(error) {
+        console.log("Something went wrong", error);
+      });
+    };
 
-		controller.removeItem = function(index) {
-			controller.items.splice(index, 1);
-		};
-	}
+    controller.removeItem = function(index) {
+      controller.items.splice(index, 1);
+    };
+  }
 
-	MenuSearchService.$inject = ['$http'];
-	function MenuSearchService($http) {
-		var service = this;
+  MenuSearchService.$inject = ['$http'];
+  function MenuSearchService($http) {
+    var service = this;
 
-		service.getMatchedMenuItems = function(searchTerm) {
+    service.getMatchedMenuItems = function(searchTerm) {
         return $http({
           method: 'GET',
           url: 'https://davids-restaurant.herokuapp.com/menu_items.json'
