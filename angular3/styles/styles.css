@@ -9,3 +9,15 @@ h1 {
   float: left;
   margin-left: 10px;
 }
+
+.itemName {
+	background-color: red;
+}
+
+.itemShortName {
+	background-color: green;
+}
+
+.itemDesc {
+	background-color: blue;
+}
