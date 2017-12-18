@@ -1,14 +1,14 @@
 (function () {
-'use strict';
+	'use strict';
 
-angular.module('MenuApp')
-.controller('ItemsController', ItemsController);
+	angular.module('MenuApp') //Access MenuApp module created in menuapp.module.js
+	.controller('ItemsController', ItemsController); //Create "ItemsController"
 
-// 'item' is injected through state's resolve
-ItemsController.$inject = ['items']
-function ItemsController(items) {
-  var itemsCtrl = this;
-  itemsCtrl.items = items;
+	ItemsController.$inject = ['items'] //Inject ItemsController with 'items' from .state('items', {resolve{}}) in routes.js
+	
+	function ItemsController(items) { //Define ItemsController and pass it items injected from the previous step.
+	var itemsCtrl = this; //Refer to this private variable as itemsCntrl
+	itemsCtrl.items = items; //Set our private variable to items.
 }
 
 })();
